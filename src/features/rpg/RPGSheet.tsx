@@ -39,9 +39,9 @@ const SKILL_DATA: SkillCategory[] = [
     icon: '⚙',
     color: '#4facfe',
     skills: [
-      { name: 'FastAPI', level: 5, xp: 92, years: '2+ yrs', tag: 'MASTER', color: '#4facfe', projects: ['AI Annotation Pipelines', 'DynamoDB Microservices'] },
-      { name: 'Node.js', level: 4, xp: 78, years: '2+ yrs', tag: 'EXPERT', color: '#4facfe', projects: ['Expert Availability System', 'REST API Services'] },
-      { name: 'Express.js', level: 4, xp: 72, years: '2 yrs', tag: 'EXPERT', color: '#4facfe', projects: ['REST APIs', 'Backend Services'] },
+      { name: 'FastAPI', level: 3, xp: 68, years: '3+ yrs', tag: 'SKILLED', color: '#4facfe', projects: ['AI Annotation Pipelines', 'DynamoDB Microservices'] },
+      { name: 'Node.js', level: 3, xp: 62, years: '3 yrs', tag: 'SKILLED', color: '#4facfe', projects: ['Expert Availability System', 'REST API Services'] },
+      { name: 'Express.js', level: 3, xp: 60, years: '3 yrs', tag: 'SKILLED', color: '#4facfe', projects: ['REST APIs', 'Backend Services'] },
     ],
   },
   {
