@@ -12,7 +12,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "/Users/jaya/Downloads/portfolio/src/styles/_variables.scss"; @import "/Users/jaya/Downloads/portfolio/src/styles/_mixins.scss";`,
+        additionalData: `@import "${path.resolve(__dirname, 'src/styles/_variables.scss')}"; @import "${path.resolve(__dirname, 'src/styles/_mixins.scss')}";`,
         silenceDeprecations: ['legacy-js-api', 'import'],
       },
     },
