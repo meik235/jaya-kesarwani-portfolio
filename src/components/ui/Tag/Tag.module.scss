@@ -1,0 +1,23 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 13px;
+  border-radius: $radius-full;
+  font-family: $font-mono;
+  font-size: 0.74rem;
+  font-weight: 500;
+  background: rgba(99, 220, 180, 0.06);
+  border: 1px solid rgba(99, 220, 180, 0.15);
+  color: $accent-primary;
+  transition: all 0.25s ease;
+  cursor: default;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    background: rgba(99, 220, 180, 0.12);
+    border-color: rgba(99, 220, 180, 0.4);
+    color: $accent-primary;
+    box-shadow: 0 0 14px rgba(99, 220, 180, 0.18);
+    transform: translateY(-1px);
+  }
+}

@@ -1,0 +1,46 @@
+.footer {
+  border-top: 1px solid $border;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-family: $font-mono;
+  font-size: 1rem;
+  color: $text-primary;
+
+  span {
+    color: $accent-primary;
+  }
+}
+
+.copy {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: $text-muted;
+  letter-spacing: 0.05em;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+
+  a {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    color: $text-muted;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $accent-primary;
+    }
+  }
+}

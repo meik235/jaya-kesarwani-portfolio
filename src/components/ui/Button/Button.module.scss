@@ -1,0 +1,86 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 32px;
+  border-radius: $radius-sm;
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+
+  // Shimmer sweep
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+    transform: translateX(-100%) skewX(-12deg);
+    transition: none;
+  }
+
+  &:hover::after {
+    animation: shimmer 0.65s ease forwards;
+  }
+
+  // ── Primary ────────────────────────────────────────────────────────────────
+  &.primary {
+    background: linear-gradient(135deg, $accent-primary 0%, rgba(99,220,180,0.85) 100%);
+    color: $bg-primary;
+    border: 1px solid transparent;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 0 0 1px rgba(99, 220, 180, 0.5),
+        0 8px 30px rgba(99, 220, 180, 0.35),
+        0 0 60px rgba(99, 220, 180, 0.15);
+      background: linear-gradient(135deg, #82e8c8 0%, $accent-primary 100%);
+    }
+
+    &:active { transform: translateY(-1px); }
+  }
+
+  // ── Outline ────────────────────────────────────────────────────────────────
+  &.outline {
+    background: transparent;
+    color: $text-primary;
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+
+    &:hover {
+      border-color: rgba(99, 220, 180, 0.55);
+      color: $accent-primary;
+      transform: translateY(-3px);
+      box-shadow:
+        0 0 0 1px rgba(99, 220, 180, 0.15),
+        0 8px 30px rgba(0,0,0,0.3),
+        inset 0 0 20px rgba(99, 220, 180, 0.04);
+    }
+
+    &:active { transform: translateY(-1px); }
+  }
+
+  // ── Ghost ──────────────────────────────────────────────────────────────────
+  &.ghost {
+    background: transparent;
+    color: $text-secondary;
+    border: none;
+    padding: 8px 16px;
+
+    &:hover {
+      color: $accent-primary;
+      background: rgba(99, 220, 180, 0.08);
+    }
+  }
+}

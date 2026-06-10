@@ -1,0 +1,44 @@
+// ── Backgrounds ──────────────────────────────────────────────
+$bg-primary:   #080b10;
+$bg-secondary: #0d1117;
+$bg-card:      rgba(255, 255, 255, 0.03);
+
+// ── Accent palette (matches original HTML feel) ───────────────
+$accent-primary:   #63dcb4;   // soft teal-green
+$accent-secondary: #4facfe;   // sky blue
+$accent-tertiary:  #a78bfa;   // violet
+
+// ── Text ─────────────────────────────────────────────────────
+$text-primary:   #e2e8f0;
+$text-secondary: #94a3b8;
+$text-muted:     #4a5568;
+
+// ── Borders / glow ───────────────────────────────────────────
+$border:      rgba(255, 255, 255, 0.07);
+$border-glow: rgba(99, 220, 180, 0.3);
+
+// ── Fonts ────────────────────────────────────────────────────
+$font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+// ── Spacing ──────────────────────────────────────────────────
+$section-padding:  100px 0;
+$container-max:    1200px;
+$container-padding: 0 24px;
+
+// ── Transitions ──────────────────────────────────────────────
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.6s ease;
+
+// ── Radii ────────────────────────────────────────────────────
+$radius-sm:   6px;
+$radius-base: 12px;
+$radius-lg:   20px;
+$radius-full: 9999px;
+
+// ── Z-index ──────────────────────────────────────────────────
+$z-cursor:  9998;
+$z-navbar:  500;
+$z-modal:   200;
+$z-tooltip: 300;

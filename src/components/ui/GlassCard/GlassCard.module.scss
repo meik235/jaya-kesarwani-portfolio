@@ -1,0 +1,61 @@
+.card {
+  @include glass-card;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+
+  // Top shimmer line on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $accent-primary, $accent-secondary, transparent);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    box-shadow: 0 0 12px rgba(99,220,180,0.5);
+  }
+
+  // Inner glow layer
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(99,220,180,0.06) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: rgba(99, 220, 180, 0.25);
+    transform: translateY(-5px);
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(99, 220, 180, 0.15),
+      var(--glow-teal);
+
+    &::before { opacity: 1; }
+    &::after  { opacity: 1; }
+  }
+
+  &.featured {
+    border-color: rgba(99, 220, 180, 0.22);
+    background: linear-gradient(145deg, rgba(99,220,180,0.025) 0%, $bg-card 100%);
+    animation: border-glow 3s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(99,220,180,0.12);
+
+    &:hover {
+      border-color: rgba(99, 220, 180, 0.45);
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(99, 220, 180, 0.18),
+        0 0 120px rgba(79, 172, 254, 0.08);
+    }
+  }
+}

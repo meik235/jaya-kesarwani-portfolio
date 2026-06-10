@@ -1,0 +1,106 @@
+.section {
+  @include section;
+  background: $bg-secondary;
+}
+
+.inner {
+  @include container;
+  text-align: center;
+}
+
+.subtext {
+  font-size: 1.0625rem;
+  color: $text-secondary;
+  max-width: 500px;
+  margin: 0 auto 64px;
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 48px;
+
+  @include responsive('lg') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive('sm') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include glass-card;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all $transition-base;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  // Per-card colored glow on hover using nth-child
+  &:nth-child(1):hover { box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(99,220,180,0.2); border-color: rgba(99,220,180,0.4); }
+  &:nth-child(2):hover { box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(79,172,254,0.2); border-color: rgba(79,172,254,0.4); }
+  &:nth-child(3):hover { box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(167,139,250,0.2); border-color: rgba(167,139,250,0.4); }
+  &:nth-child(4):hover { box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(244,114,182,0.2); border-color: rgba(244,114,182,0.4); }
+
+  &:hover {
+    transform: translateY(-6px);
+
+    .icon {
+      background: rgba(99, 220, 180, 0.15);
+      color: $accent-primary;
+      box-shadow: 0 0 20px rgba(99,220,180,0.35);
+      transform: scale(1.1);
+    }
+
+    .label {
+      color: $accent-primary;
+    }
+  }
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: $radius-sm;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid $border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: $text-secondary;
+  transition: all $transition-base;
+}
+
+.label {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: $text-muted;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color $transition-fast;
+}
+
+.value {
+  font-size: 0.8125rem;
+  color: $text-secondary;
+  text-align: center;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,63 @@
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  margin-left: -4px;
+  margin-top: -4px;
+  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, margin 0.2s ease;
+  will-change: transform;
+
+  &.hovering {
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    margin-top: -6px;
+    background: var(--accent-secondary);
+  }
+
+  &.clicking {
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    margin-top: -3px;
+  }
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(99, 220, 180, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  margin-left: -18px;
+  margin-top: -18px;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, margin 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+
+  &.hovering {
+    width: 52px;
+    height: 52px;
+    margin-left: -26px;
+    margin-top: -26px;
+    border-color: rgba(79, 172, 254, 0.6);
+    background: rgba(79, 172, 254, 0.04);
+  }
+
+  &.clicking {
+    width: 28px;
+    height: 28px;
+    margin-left: -14px;
+    margin-top: -14px;
+    border-color: var(--accent-primary);
+  }
+}
